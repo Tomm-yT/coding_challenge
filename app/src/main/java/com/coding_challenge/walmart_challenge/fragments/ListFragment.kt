@@ -41,14 +41,14 @@ class ListFragment : BaseFragment(){
         countriesViewModel.countries.observe(viewLifecycleOwner){ state ->
             when (state){
                 is ResponseState.LOADING -> {
-                    Toast.makeText(context, "LOADING", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(context, "LOADING", Toast.LENGTH_SHORT).show()
                     binding.countriesRecycler.visibility = View.GONE
                     binding.countryProgress.visibility = View.VISIBLE
                 }
                 is ResponseState.SUCCESS -> {
                     binding.countriesRecycler.visibility = View.VISIBLE
                     binding.countryProgress.visibility = View.GONE
-                    Toast.makeText(context, "SHOWING COUNTRIES...", Toast.LENGTH_LONG).show()
+                    //Toast.makeText(context, "SHOWING COUNTRIES...", Toast.LENGTH_LONG).show()
                     mAdapter.addCountries(state.countries)
                 }
                 is ResponseState.ERROR -> {

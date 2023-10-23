@@ -18,12 +18,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        supportActionBar?.hide();
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
         navController = navHostFragment.navController
         setupActionBarWithNavController(navController)
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
